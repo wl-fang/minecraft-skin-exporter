@@ -94,6 +94,7 @@ class MyHandler(BaseHTTPRequestHandler):
                     self.send_header("Content-type", "text/plain")
                     self.end_headers()
                     self.wfile.write(b"Failed to download skin texture")
+                image.close()
             else:
                 self.send_response(400)
                 self.send_header("Content-type", "text/plain")
